@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: rails_proyect_development
+
+test:
+  <<: *default
+  database: rails_proyect_test
+
+production:
+  <<: *default
+  database: rails_proyect_production
