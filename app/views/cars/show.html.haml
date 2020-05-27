@@ -1,0 +1,13 @@
+%p#notice= notice
+.card
+  .card-body
+    %h5.card-title color:
+    %p.card-text &nbsp #{ @car.color }
+    %h5.card-title Cantidad de puertas:
+    %p.card-text &nbsp #{ @car.doors_amount }
+    %h5.card-title Marca:
+    %p.card-text &nbsp #{ @car.brand }
+
+.row.mt-3
+  .col-3
+    = link_to "Atrás", cars_path,  class: 'btn btn-secondary btn-block'

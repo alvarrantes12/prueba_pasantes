@@ -1,0 +1,11 @@
+%p#notice= notice
+.card
+  .card-body
+    %h5.card-title Nombre:
+    %p.card-text &nbsp #{ @user.first_name }
+    %h5.card-title Apellido:
+    %p.card-text &nbsp #{ @user.last_name }
+
+.row.mt-3
+  .col-3
+    = link_to "Atrás", users_path,  class: 'btn btn-secondary btn-block'

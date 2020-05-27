@@ -1,0 +1,32 @@
+.page-header
+  %h1.mb-4
+    ="Listado de carros"
+    .float-right
+      = link_to "Nuevo carro", new_car_path, class: 'btn btn-primary'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th="Color"
+      %th="Cantodad de puertas"
+      %th="Marca"
+      %th="Dueño"
+      %th
+      %th
+      %th
+
+  %tbody
+    - @cars.each do |car|
+      %tr
+        %td= car.color
+        %td= car.doors_amount
+        %td= car.brand
+        %td= car.user.first_name
+        %td= link_to "Ver", car, class: 'btn btn-info'
+        %td= link_to "Editar", edit_car_path(car), class: 'btn btn-success'
+        %td= link_to "Eliminar", car, method: :delete, class: 'btn btn-danger',
+                  data: { confirm: "Desea eliminarlo",
+                    accept: "OK",
+                    reject: "CANCELAR" }
+
+%br

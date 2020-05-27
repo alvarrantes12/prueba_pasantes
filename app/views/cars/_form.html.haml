@@ -1,0 +1,21 @@
+= form_for @car, validate: true do |f|
+  .form-group
+    = f.label "Color", class: 'form-label required'
+    = f.text_field :color, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label "Cantidad de puertas", class: 'form-label required'
+    = f.text_field :doors_amount, autofocus: true, class: 'form-control', type: :number
+  .form-group
+    = f.label "Marca", class: 'form-label required'
+    = f.text_field :brand, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label "Dueño", class: 'form-label required'
+    = f.select(:user_id, options_for_select(@users, @car.user),
+                        {prompt:"Seleccione"}, class:'form-control')
+  .row
+    .offset-3.col-3
+      = link_to "Atrás", cars_path,  class: 'btn btn-secondary btn-block'
+    .col-3
+      = button_tag "Guardar", class: 'btn btn-outline-success btn-block',
+          'data-disable-with': "Guardando..."
+

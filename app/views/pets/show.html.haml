@@ -1,0 +1,13 @@
+%p#notice= notice
+.card
+  .card-body
+    %h5.card-title Nombre:
+    %p.card-text &nbsp #{ @pet.name }
+    %h5.card-title Tipo:
+    %p.card-text &nbsp #{ @pet.specie }
+    %h5.card-title Dueño:
+    %p.card-text &nbsp #{ @pet.user.first_name }
+
+.row.mt-3
+  .col-3
+    = link_to "Atrás", pets_path,  class: 'btn btn-secondary btn-block'
